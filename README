@@ -1,0 +1,14 @@
+Project for a simple low power linux car computer 
+
+Goal is to support:
+- Automated wifi connection to home / office and auto-upload gpx tracks
+- GPS recording using BU-353 USB GPS dongle
+-- Write GPS track to gpx file
+- Record video from USB webcam
+- Auto-start / stop gps / video recording based on aux feed from car electronics
+
+Hardware
+- BU-353 GPS usb dongle
+
+
+This project is a work in progress
