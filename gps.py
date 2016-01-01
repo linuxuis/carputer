@@ -6,6 +6,7 @@ import subprocess
 from datetime import datetime
 import sys
 import atexit
+import os
 
 # variables
 DEBUG=1
@@ -75,10 +76,10 @@ def gpsRead(gpsData, gpxFile):
 			gpsFreshness += 1 
 		# playback an audio clip if the gps was lost or acquired
 		if gpsFreshness > 5 and lastAudio == "acquiredGPS":
-			subprocess.call("mplayer location_lost.ogg",shell=True)
+			subprocess.call("mplayer location_lost.ogg > /dev/null 2>&1",shell=True)
 			lastAudio = "lostGPS"
 		elif gpsFreshness == 0 and lastAudio == "lostGPS":
-			subprocess.call("mplayer location_recovered.ogg",shell=True)
+			subprocess.call("mplayer location_recovered.ogg > /dev/null 2>&1",shell=True)
 			lastAudio = "acquiredGPS"
 		print "freshness: " + str(gpsFreshness)
 '''
@@ -163,10 +164,17 @@ gps = gpsData()
 # Create a filename to store the gpx track as based on current time ('2015-12-31_18:04:36.gpx')
 filename=str(datetime.now()).replace(' ','_').split('.')[0] + '.gpx'
 
+# create command to run video recording 
+command="ffmpeg -f alsa -i hw:2 -s 1920x1080 -f v4l2 -vcodec h264 -i /dev/video0 -copyinkf -vcodec copy -strict -2 " + str(filename).split('.')[0] + ".mp4 " + "2> /dev/null &"
+
+# Begin recording video and run in background process (will terminate when script is terminated)
+os.system(command)
+
 # Open file for writing 
 gpxFile = open(filename, "w")
 # Write the header etc to the gpxFile
 initGpxFile(gpxFile)
+
 
 # Register function to run at exit of code 
 atexit.register(closeGPXfile)

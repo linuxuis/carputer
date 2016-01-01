@@ -4,12 +4,13 @@ Goal is to support:
 - Automated wifi connection to home / office and auto-upload gpx tracks
 - GPS recording using BU-353 USB GPS dongle
 -- [DONE] Write GPS track to gpx file
+- [DONE] Video capture from webcam
 - Record video from USB webcam
 - Auto-start / stop gps / video recording based on aux feed from car electronics
 
 Hardware
 - BU-353 GPS usb dongle
-
+- Logitech C920 webcam
 
 This project is a work in progress
 
