@@ -16,3 +16,14 @@ This project is a work in progress
 
 Audio files retrieved from http://download.osmand.net/rawindexes/
  - de_0.voice.zip
+
+
+## Installation / dependencies
+Tested on a fedora 21 and 22 release
+yum (or dnf) install pyserial 
+
+## Running the code
+python gps.py 
+	- Will automatically start recording video to current directory with date time 
+	  output as filename. Another GPX file will be written with gps tracks if gps
+	  signal is available. 
