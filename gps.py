@@ -142,7 +142,7 @@ function to close the GPX File
 '''
 def closeGPXfile():
 	global gpxFile
-	gpxFile.write('\t</trk>\n</gpx>')
+	gpxFile.write('\t</trkseg></trk>\n</gpx>')
 	gpxFile.close()
 	if DEBUG:
 		print 'Closed the gpx file!'
@@ -155,7 +155,7 @@ gpxFile: the file object used for writing
 def initGpxFile(gpxFile):
 	gpxFile.write('<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n')
 	gpxFile.write('<gpx version="1.1" creator="linuxuis carputer GPX recorder - https://github.com/linuxuis/carputer">\n')
-	gpxFile.write('\t<trk>\n')
+	gpxFile.write('\t<trk><trkseg>\n')
 	
 # Main 
 gps = gpsData()
