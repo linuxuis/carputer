@@ -11,6 +11,15 @@ Goal is to support:
 Hardware
 - BU-353 GPS usb dongle http://usglobalsat.com/s-172-bu-353-s4-support.aspx
 - Logitech C920 webcam https://secure.logitech.com/en-us/product/hd-pro-webcam-c920
+- Fitlet-IA10 http://www.tinygreenpc.com/fitlet-ia10-barebone.html
+	* 120 GB SDD
+	* 4 GB RAM
+	* External Power button http://www.tinygreenpc.com/accessories/connectors-cables/remote-button-fitlet.html
+- M4-ATX car PSU http://www.mini-box.com/M4-ATX
+- M4-ATX case http://www.mini-box.com/M4-ATX-SFX-ATX-enclosure?sc=8&category=981
+
+Software
+- Fedora Linux 23
 
 This project is a work in progress
 
